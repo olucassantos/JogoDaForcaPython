@@ -1,5 +1,6 @@
 import random
 import os
+LARGURA = 80
 
 lista_palavras = [
     "PITANGA",
@@ -21,11 +22,11 @@ palavra_sorteada = random.choice(lista_palavras)
 quantidade_chances = len(palavra_sorteada) + 2
 
 # Sistema mostra regras do jogo
-print("Bem-vindo ao jogo da forca!")
-print("Você tem", quantidade_chances, "chances para acertar a palavra.")
-print("Você pode chutar uma letra ou a palavra inteira.")
-print("Caso erre a palavra, você perde o jogo!")
-print("Boa sorte!")
+print(f"Bem-vindo ao jogo da forca!".center(LARGURA))
+print(f"Você tem {quantidade_chances} chances para acertar a palavra.".center(LARGURA))
+print(f"Você pode chutar uma letra ou a palavra inteira.".center(LARGURA))
+print(f"Caso erre a palavra, você perde o jogo!".center(LARGURA))
+print(f"Boa sorte!".center(LARGURA, "*"))
 
 input("Pressione ENTER para começar...")
 
