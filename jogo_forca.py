@@ -16,6 +16,8 @@ lista_letras_corretas = []
 
 # Sistema sorteia uma palavra e define as chances
 palavra_sorteada = random.choice(lista_palavras)
+
+# Define a quantidade de chances usando a quantidade de letras da palavra
 quantidade_chances = len(palavra_sorteada) + 2
 
 # Sistema mostra regras do jogo
@@ -30,6 +32,7 @@ input("Pressione ENTER para começar...")
 # Sistema limpa a tela
 os.system("cls")
 
+# Jogador pode dar palpites até acabarem as chances
 while quantidade_chances > 0:
     os.system("cls")
     # Sistema desenha a forca
@@ -38,6 +41,8 @@ while quantidade_chances > 0:
     falta_letras = False
 
     for letra in palavra_sorteada:
+
+        # Verifica se a letra está na lista de letras corretas
         if letra in lista_letras_corretas:
             print(letra, end=" ")
         else:
@@ -47,9 +52,11 @@ while quantidade_chances > 0:
     # Quebra a linha
     print("\n")
 
+    # Verifica se o jogador acertou todas as letras
     if not falta_letras:
         quantidade_chances = 0
         perdeu = False
+        # Sai do loop while
         break
 
     # Usuário chuta uma palavra ou letra
